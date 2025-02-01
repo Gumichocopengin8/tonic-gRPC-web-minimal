@@ -80,7 +80,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         )
         .layer(tonic_web::GrpcWebLayer::new())
         .add_service(pb::echo_server::EchoServer::new(echo_server))
-        .serve("localhost:8000".to_socket_addrs().unwrap().next().unwrap())
+        .serve("0.0.0.0:8000".to_socket_addrs().unwrap().next().unwrap())
         .await
         .unwrap();
     Ok(())

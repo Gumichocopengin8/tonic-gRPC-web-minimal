@@ -1,0 +1,21 @@
+services:
+  tonic-app:
+    build:
+      context: .
+    expose:
+      - "8000"
+    networks:
+      - app-network
+
+  envoy:
+    image: envoyproxy/envoy:v1.33-latest
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./envoy.yaml:/etc/envoy/envoy.yaml
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
