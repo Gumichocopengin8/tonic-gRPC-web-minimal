@@ -1,0 +1,19 @@
+{
+  "name": "proto-client",
+  "version": "0.1.0",
+  "private": true,
+  "main": "echo_pb.js",
+  "types": "./echo_pb.d.ts",
+  "type": "commonjs",
+  "description": "gRPC-Web",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "google-protobuf": "^3.21.4",
+    "grpc-web": "^1.5.0"
+  },
+  "devDependencies": {
+    "@types/google-protobuf": "^3.15.12"
+  }
+}
